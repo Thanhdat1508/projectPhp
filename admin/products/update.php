@@ -3,16 +3,10 @@ if (is_array($get_by_product) || is_object($get_by_product)) {
     extract($get_by_product);
     $img = $path_upload . $img_c;
 }
-
-?>
-
-<?php
-
-
 ?>
 <div class="row" style="width: 700px; margin: auto;">
     <h1>Cập nhật sản phẩm </h1>
-    <form action="?act=product&addproduct" method="POST" id="form-sp" enctype="multipart/form-data">
+    <form action="?act=product&updateproduct" method="POST" id="form-sp" enctype="multipart/form-data">
         <div class="form-group mb-3">
             <label for="name_product" class="form-label">Tên sản phẩm</label>
             <input type="text" class="form-control" id="name_product" name="name_product" value="<?php echo $name_product ?>" placeholder="IPHONE 11">
@@ -35,9 +29,9 @@ if (is_array($get_by_product) || is_object($get_by_product)) {
                         extract($category);
                         if ($cate_id == $id_cate) {
                 ?>
-                            <option selected value=<?php echo $id ?>><?php echo $name_cate; ?></option>
+                            <option selected value=<?php echo $id_cate ?>><?php echo $name_cate; ?></option>
                         <?php } else { ?>
-                            <option value=<?php echo $id ?>><?php echo $name_cate; ?></option>
+                            <option value=<?php echo $id_cate ?>><?php echo $name_cate; ?></option>
                 <?php
                         }
                     }
@@ -89,17 +83,18 @@ if (is_array($get_by_product) || is_object($get_by_product)) {
             <textarea id="describeProduct" name="describeProduct" style="height: 300px;"><?php echo $describe_product ?></textarea>
             <span class="form-message"></span>
         </div>
-        <input type="hidden" name="add_product">
+        <input type="hidden" name="update_product">
+        <input type="hidden" name="id_product" value="<?php echo $id_product ?>">
 
         <div class="form-group mb-3">
-            <button name="add_product" class="btn btn-primary">Cập nhật</button>
+            <button name="update_product" class="btn btn-primary">Cập nhật</button>
         </div>
 
 
         <div class="mb-3">
             <?php
             if (isset($message) && ($message != "")) {
-                echo '<script language="javascript">alert("Cập nhật sản phẩm thành công!");</script>';
+                echo $message;
             }
             ?>
         </div>

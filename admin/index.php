@@ -85,6 +85,30 @@ if (isset($_GET['act'])) {
                     $listCategory = getAllCategory();
                 }
                 include "products/update.php";
+            } else if (isset($_GET['updateproduct'])) {
+                if (isset($_POST['update_product'])) {
+                    $name_product = $_POST['name_product'];
+                    $title_product = $_POST['title_product'];
+                    $cate_product = $_POST['cate_product'];
+                    $price_product = $_POST['price_product'];
+                    $id = $_POST['id_product'];
+                    $describeProduct = $_POST['describeProduct'];
+                    $img_product = $_FILES['img_product']['name'];
+                    $file_upload = $path_upload . basename($_FILES['img_product']['name']);
+                    if (move_uploaded_file($_FILES['img_product']['tmp_name'], $file_upload)) {
+                        //echo '<script language="javascript">alert("Đã upload thành công!");</script>';
+                    } else {
+                        //echo '<script language="javascript">alert("Đã upload thất bại!");</script>';
+                    }
+                    var_dump($describeProduct);
+
+                    // var_dump($cate_product, $name_product, $img_product, $title_product, $describeProduct, $price_product, $id);
+
+                    // var_dump($cate_product, $name_product, $img_product, $title_product, $describeProduct, $price_product, $id);
+                    $message = 'cập nhật thành công';
+                }
+                $listproduct = getAllProduct();
+                include 'products/listproduct.php';
             }
 
 

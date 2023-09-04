@@ -25,5 +25,7 @@ function getByOne($id){
 function updateCategory($id, $updateCate){
     $sql = "update category set name_cate='".$updateCate."' where id_cate=" .$id;
     pdo_execute($sql);
+
+//     $sql = "update category set name_cate=?, where id_cate= ?";
+//     pdo_execute($sql, $id, $updateCate);
 }
-?>

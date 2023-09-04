@@ -42,8 +42,8 @@
 
                         <td><?php echo number_format($price_product) ?></td>
                         <td>Chi tiết</td>
-                        <td><a style="" href="index.php?act=product&getbyproduct&id=<?php echo $id ?>"> <input type="button" class="btn btn-primary" value="Sửa"></a> |
-                            <a style="" href="index.php?act=product&deleteproduct&id=<?php echo $id ?>"> <input type="button" class="btn btn-warning" value="Xóa"></a>
+                        <td><a style="" href="index.php?act=product&getbyproduct&id=<?php echo $id_product ?>"> <input type="button" class="btn btn-primary" value="Sửa"></a> |
+                            <a style="" href="index.php?act=product&deleteproduct&id=<?php echo $id_product ?>"> <input type="button" class="btn btn-warning" value="Xóa"></a>
                         </td>
 
 
