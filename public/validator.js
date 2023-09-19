@@ -192,3 +192,13 @@ Validator.isConfirmed = function (selector, getConfirmValue, message){
         }
     }
 }
+
+// Validator.isCheckNumber = function (selector, message){
+//     return{
+//         selector: selector,
+//         test: function (value){
+//             var checkNumber = /^\d+$/;
+//                return checkNumber.test(value) ? undefined : message || 'Vui lòng nhập số';
+//         }
+//     }
+// }

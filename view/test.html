@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân Trang</title>
+    <style>
+        .pagination {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .pagination li {
+            margin: 5px;
+        }
+
+        .pagination a {
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .pagination a:hover {
+            background-color: #ddd;
+        }
+
+        .active {
+            background: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul class="pagination">
+        <li><a href="#">&laquo; Trang trước</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">Trang tiếp theo &raquo;</a></li>
+    </ul>
+
+</body>
+<script>
+    // Lấy trang hiện tại từ URL hoặc một biến JavaScript (ví dụ: currentPage)
+    var currentPage = 1; // Đây chỉ là ví dụ, bạn cần cập nhật giá trị thực tế
+
+    // Lấy danh sách tất cả các liên kết trong phân trang
+    var paginationLinks = document.querySelectorAll(".pagination li a");
+
+    // Lặp qua danh sách các liên kết và thêm lớp "active" vào liên kết của trang hiện tại
+    paginationLinks.forEach(function (link) {
+        // Kiểm tra xem liên kết có chứa số trang tương ứng không
+        var page = parseInt(link.innerHTML);
+
+        if (!isNaN(page) && page === currentPage) {
+            link.classList.add("active");
+        }
+    });
+</script>
+
+
+</html>

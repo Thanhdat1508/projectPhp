@@ -45,20 +45,50 @@ if (isset($listCategory)) {
     </div>
 
     <div class="form-group mb-3">
+      <label for="sale_price" class="form-label">Giá giảm</label>
+      <input type="text" class="form-control" id="sale_price" name="sale_price" placeholder="15.800.000">
+      <span class="form-message"></span>
+    </div>
+
+    <div class="form-group mb-3">
       <label for="img_product" class="form-label">Hình ảnh chính</label>
       <input type="file" class="form-control" id="img_product" name="img_product" placeholder="Điện thoại">
       <span class="form-message"></span>
     </div>
 
     <div class="form-group mb-3">
-      <label for="img_product" class="form-label">Hình ảnh phụ</label>
+      <label for="img_product" class="form-label">Hình ảnh phụ 1</label>
       <input type="file" class="form-control" id="img_product1" name="img_product1" placeholder="Điện thoại">
       <span class="form-message"></span>
     </div>
 
     <div class="form-group mb-3">
-      <label for="img_product" class="form-label">Hình ảnh phụ</label>
+      <label for="img_product" class="form-label">Hình ảnh phụ 2</label>
       <input type="file" class="form-control" id="img_product2" name="img_product2" placeholder="Điện thoại">
+      <span class="form-message"></span>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="img_product" class="form-label">Hình ảnh phụ 3</label>
+      <input type="file" class="form-control" id="img_product3" name="img_product3" placeholder="Điện thoại">
+      <span class="form-message"></span>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="img_product" class="form-label">Hình ảnh phụ 4</label>
+      <input type="file" class="form-control" id="img_product4" name="img_product4" placeholder="Điện thoại">
+      <span class="form-message"></span>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="img_product" class="form-label">Hình ảnh phụ 5</label>
+      <input type="file" class="form-control" id="img_product5" name="img_product5" placeholder="Điện thoại">
+      <span class="form-message"></span>
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="img_product" class="form-label">Hình ảnh phụ 6</label>
+      <input type="file" class="form-control" id="img_product6" name="img_product6" placeholder="Điện thoại">
       <span class="form-message"></span>
     </div>
 
@@ -89,7 +119,7 @@ if (isset($listCategory)) {
     <div class="mb-3">
       <?php
       if (isset($message) && ($message != "")) {
-        echo '<script language="javascript">alert("Thêm sản phẩm thành công!");</script>';
+        echo $message;
       }
       ?>
     </div>

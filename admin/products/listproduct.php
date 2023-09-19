@@ -1,5 +1,26 @@
 <div class="row" style="width: 90%; margin: auto;">
     <h1>Danh sách sản phẩm</h1>
+
+    <div class="col-md-12">
+        <div class="header-search">
+            <form action="" method="POST">
+                <select class="input-select" name="select_cate">
+                    <option value="0">Lọc danh mục</option>
+                    <?php
+                    foreach ($listCategory as $listcate) {
+                        extract($listcate);
+                    ?>
+                        <option value="<?php echo $id_cate ?>"><?php echo $name_cate ?></option>
+                    <?php } ?>
+
+
+                    <!-- <option value="1">Category 02</option> -->
+                </select>
+
+                <button class="search-btn" name="search_cate">Tìm kiếm</button>
+            </form>
+        </div>
+    </div>
     <table class="table">
         <thead>
             <tr>
@@ -21,19 +42,13 @@
                 foreach ($listproduct as $product) {
                     extract($product);
                     $img = $path_upload . $img_c;
-                    // var_dump($img);
-                    // if(is_file($img)){
-                    //     $img;
-                    // }else{
-                    //     $img = 'no hinh';
-                    // }
 
             ?>
                     <tr>
                         <th scope="row"><?php echo $i++ ?></th>
                         <td><?php echo $name_product ?></td>
                         <?php
-                        $listcate = getByOne($cate_id);
+                        $listcate = get_by_one($cate_id);
                         extract($listcate);
                         ?>
                         <td><?php echo $name_cate ?></td>
